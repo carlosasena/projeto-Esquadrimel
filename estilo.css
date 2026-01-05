@@ -1,0 +1,57 @@
+@charset 'UTF-8';
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    --cor7: #5a0000; /*Rodapé, fundo de meus, áreas institucionais fortes*/
+    --cor6: #660000; /*Cabeçalho, títulos principais, destaques importantes*/
+    --cor5: #800000; /*Identidade visual, botões principais, CTA's, logo*/
+    --cor4: #8b1a1a; /*ìcones, subtítulos, elementos gráficos*/
+    --cor3: #9b2d30; /*Cards, badgens, destaques secundários*/
+    --cor2: #b04a4a; /*Fundos leves, seções alternadas*/
+    --cor1: #d8a1a1; /*Fundos suaves, área de apoio, divisões visuais*/
+}
+
+@font-face {
+    font-family: 'fontlogo';
+    src: url('./fonts/NeueAachen/NeueAachenProBlkIt.TTF') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'fontpadrao';
+    src: url('./fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    background: #f2e6e6;
+    font-family: 'fontpadrao';
+}
+
+h1.logo1{
+    background: var(--cor5);
+    font-family: 'fontlogo';
+    font-size: 7em;
+    color: white;
+    padding: 5px;
+    padding-left: 50px;
+    text-align: left;
+}
+
+h2.logo2{
+    background: white;
+    font-family: 'fontpadrao';
+    font-size: 1.70em;
+    font-weight: bold;
+    color: var(--cor5);
+    padding: 2.5px;
+    padding-left: 45px;
+    text-align: left;
+}
