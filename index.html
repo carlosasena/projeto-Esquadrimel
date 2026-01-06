@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    
-    <h1 class="logo1">Esquadrimel</h1>
-    <h2 class="logo2">ACM - VIDRO - ALUMÍNIO | Qualidade e Tradição</h2>
+
+    <header>
+        
+        <h1>Esquadrimel</h1>
+        <p>ACM - VIDRO - ALUMÍNIO</p>
+    </header>
+
     <nav >
         <a href="index.html">Home</a>
         <a href="galeria.html">Galeria de Fotos</a>
@@ -18,50 +22,166 @@
         <a href="contato.html">Entre em Contato</a>
         <a href="admin.html">Administração</a>
     </nav>
+ 
+    <main>
+        <h2>Qualidade e Tradição</h2>
+        <p>
+            A <strong>Esquadrimel</strong> é referência em <strong>serralheria especializada em alumínio em Meleiro SC</strong>, com <strong>mais de 20 anos em atividade</strong>, oferecendo soluções sob medida em <strong>portões, janelas, grades e box para banheiro em alumínio de ótima qualidade</strong>.
+        </p>
+        <p>
+            Trabalhamos com <strong>alumínio resistente, acabamento profissional e projetos personalizados</strong>, atendendo clientes residenciais, comerciais e industriais em <strong>Meleiro e região</strong>.
+        </p>
 
-           
-    <p>
-        A **Esquadrimel** é referência em **serralheria especializada em alumínio em Meleiro SC**, com **mais de 20 anos em atividade**, oferecendo soluções sob medida em **portões, janelas, grades e box para banheiro em alumínio de ótima qualidade**.
-    </p>
+        <ul>
+            <li>Mais de 20 anos de experiência</li>
+            <li>Alumínio de alta qualidade</li>
+            <li>Atendimento personalizado em Meleiro/SC</li>
+        </ul>
 
-    <p>
-        Trabalhamos com **alumínio resistente, acabamento profissional e projetos personalizados**, atendendo clientes residenciais, comerciais e industriais em **Meleiro e região**.
-    </p>
+<div class="slideshow-section">
+    <div class="slideshow-titulo">
+        Nossos Trabalhos em Alumínio
+    </div>
+
+    <div class="slides-wrapper">
+        <div class="slide active">
+            <img src="image/image01.jpg" alt="estrutura de alumínio">
+            <div class="slide-legenda">Portões em Alumínio Sob Medida</div>
+        </div>
+
+        <div class="slide">
+            <img src="image/image03.jpg" alt="estrrutura de alumínio">
+            <div class="slide-legenda">Janelas e Esquadrias de Alumínio</div>
+        </div>
+
+        <div class="slide">
+            <img src="image/image05.jpg" alt="estrutura de alumínio">
+            <div class="slide-legenda">Box para Banheiro em Alumínio</div>
+        </div>
+
+        <div class="slide">
+            <img src="image/image07.jpg" alt="estrutura de alumínio">
+            <div class="slide-legenda">Grades de Proteção em Alumínio</div>
+        </div>
+
+        <div class="slide">
+            <img src="image/image11.jpg" alt="estrutura de alumínio">
+            <div class="slide-legenda">Estruturas Metálicas Personalizadas</div>
+        </div>
+
+        <button class="prev" onclick="mudarSlide(-1)">❮</button>
+        <button class="next" onclick="mudarSlide(1)">❯</button>
+    </div>
+
+    <div class="slide-contador">
+        Foto <span id="numero-atual">1</span> de <span id="total">5</span>
+    </div>
+
+    <div class="dots-container">
+        <button class="dot active" onclick="irParaSlide(0)"></button>
+        <button class="dot" onclick="irParaSlide(1)"></button>
+        <button class="dot" onclick="irParaSlide(2)"></button>
+        <button class="dot" onclick="irParaSlide(3)"></button>
+        <button class="dot" onclick="irParaSlide(4)"></button>
+    </div>
+
+    <div class="controles">
+        <button class="btn-controle" onclick="toggleAutoPlay()">⏸ Pausar</button>
+        <button class="btn-controle" onclick="reiniciar()">↺ Reiniciar</button>
+    </div>
+</div>
+
+<main>
+
+    <div>
+        <a href="contato.html">Solicite agora seu orçamento em serralheria de alumínio.</a>
+    </div>
+
+    <h2>Serviços de Serralheria em Alumínio em Meleiro SC</h2>
 
     <ul>
-        <li>✔ Mais de 20 anos de experiência</li>
-        <li>✔ Alumínio de alta qualidade</li>
-        <li>✔ Atendimento personalizado em Meleiro/SC</li>
+        <li>Portões em alumínio sob medida</li>
+        <li>Janelas e esquadrias de alumínio</li>
+        <li>Grades de proteção em alumínio</li>
+        <li>Box para banheiro em alumínio</li>
+        <li>Estruturas metálicas personalizadas</li>
+        <li>Manutenção e ajustes em esquadria</li>
     </ul>
-
-    <h2>👉 *Solicite agora seu orçamento em serralheria de alumínio.*</h2>
-
-    ---
-
-    <h2>### Serviços de Serralheria em Alumínio em Meleiro SC</h2>
+    
+    <h2>Por que escolher nossa serralheria em Meleiro?</h2>
 
     <ul>
-        <li>* Portões em alumínio sob medida</li>
-        <li>* Janelas e esquadrias de alumínio</li>
-        <li>* Grades de proteção em alumínio</li>
-        <li>* Box para banheiro em alumínio</li>
-        <li>* Estruturas metálicas personalizadas</li>
-        <li>* Manutenção e ajustes em esquadria</li>
+        <li>Mais de <strong>20 anos de atuação no mercado</strong></li>
+        <li>Empresa sediada em <strong>Meleiro – Santa Catarina</strong>**</li>
+        <li>Uso exclusivo de <strong>alumínio de ótima qualidade</strong></li>
+        <li>Compromisso com prazos e acabamento</li>
+        <li>Excelente custo-benefício</li>
+        <li>Atendimento local e de confiança</li>
     </ul>
-
-    ---
-
-    <h2>### Por que escolher nossa serralheria em Meleiro?</h2>
-
-    <ul>
-        <li>* Mais de **20 anos de atuação no mercado**</li>
-        <li>* Empresa sediada em **Meleiro – Santa Catarina**</li>
-        <li>* Uso exclusivo de **alumínio de ótima qualidade**</li>
-        <li>* Compromisso com prazos e acabamento</li>
-        <li>* Excelente custo-benefício</li>
-        <li>* Atendimento local e de confiança</li>
-    </ul>
-
-    ---
+    
+</main>
 </body>
+<script>
+    let slideAtualEsquadrimel = 0;
+    let intervaloAutoEsquadrimel;
+    let estaRodandoEsquadrimel = true;
+
+    function mostrarSlideEsquadrimel(indice) {
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const total = slides.length;
+
+        if (indice >= total) {
+            slideAtualEsquadrimel = 0;
+        } else if (indice < 0) {
+            slideAtualEsquadrimel = total - 1;
+        } else {
+            slideAtualEsquadrimel = indice;
+        }
+
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        slides[slideAtualEsquadrimel].classList.add('active');
+        dots[slideAtualEsquadrimel].classList.add('active');
+
+        document.getElementById('numero-atual').textContent = slideAtualEsquadrimel + 1;
+        document.getElementById('total').textContent = total;
+    }
+
+    function mudarSlide(direcao) {
+        mostrarSlideEsquadrimel(slideAtualEsquadrimel + direcao);
+    }
+
+    function irParaSlide(indice) {
+        mostrarSlideEsquadrimel(indice);
+    }
+
+    function autoPlayEsquadrimel() {
+        intervaloAutoEsquadrimel = setInterval(() => {
+            mudarSlide(1);
+        }, 4000);
+    }
+
+    function toggleAutoPlay() {
+        const btn = document.querySelector('.btn-controle');
+        if (estaRodandoEsquadrimel) {
+            clearInterval(intervaloAutoEsquadrimel);
+            btn.textContent = '▶ Play';
+            estaRodandoEsquadrimel = false;
+        } else {
+            autoPlayEsquadrimel();
+            btn.textContent = '⏸ Pausar';
+            estaRodandoEsquadrimel = true;
+        }
+    }
+
+    function reiniciar() {
+        mostrarSlideEsquadrimel(0);
+    }
+
+    // Inicia o slideshow quando a página carregar
+    mostrarSlideEsquadrimel(0);
+    autoPlayEsquadrimel();
+</script>
 </html>

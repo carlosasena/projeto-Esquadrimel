@@ -16,42 +16,257 @@
 }
 
 @font-face {
-    font-family: 'fontlogo';
+    font-family: 'logo';
     src: url('./fonts/NeueAachen/NeueAachenProBlkIt.TTF') format('truetype');
-    font-weight: bold;
-    font-style: italic;
+   
 }
 
 @font-face {
-    font-family: 'fontpadrao';
+    font-family: 'padrao';
     src: url('./fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+}   
 
 body{
-    background: #f2e6e6;
-    font-family: 'fontpadrao';
+    background: var(--cor1);
 }
 
-h1.logo1{
+header > h1{
     background: var(--cor5);
-    font-family: 'fontlogo';
-    font-size: 7em;
+    font-family: 'logo';
+    font-size: 5em;
     color: white;
     padding: 5px;
     padding-left: 50px;
     text-align: left;
 }
 
-h2.logo2{
+header > p{
     background: white;
-    font-family: 'fontpadrao';
-    font-size: 1.70em;
+    font-family: 'padrao';
+    font-style: italic;
+    font-size: 37px;
     font-weight: bold;
     color: var(--cor5);
-    padding: 2.5px;
+    padding: 3px;
     padding-left: 45px;
     text-align: left;
+}
+
+nav{
+    background: var(--cor5);
+    padding: 10px;
+    text-align: right;
+    box-shadow: rgba(0, 0, 0, 0.315);
+
+}
+
+nav > a{
+    text-decoration: none;
+    font-family: 'padrao';
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+}
+
+nav > a:hover{
+    background: var(--cor1);
+    color: var(--cor5);
+}
+
+main{
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px rgba(0, 0, 0, 0.420);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main > h2 {
+    color: white;
+    font-family: 'padrao';
+    font-weight: bolder;
+    font-size: 1.8em;
+    background-image: linear-gradient(to left, var(--cor1), var(--cor7));
+    min-height: 5px;
+    text-align: left;
+    padding: 5px;
+}
+
+main p{
+    font-family: 'padrao';
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+/* ============================================
+   SLIDESHOW - ESQUADRIMEL
+   ============================================ */
+
+.slideshow-section {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slideshow-titulo {
+    font-family: 'padrao';
+    background-image: linear-gradient(to left, var(--cor1), var(--cor7));
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: left;
+}
+
+.slides-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.slide {
+    display: none;
+    position: relative;
+}
+
+.slide.active {
+    display: block;
+    animation: fadeIn 0.6s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.slide-legenda {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(90, 0, 0, 0.85);
+    color: white;
+    padding: 20px;
+    font-family: 'padrao';
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--cor5);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: var(--cor7);
+    opacity: 1;
+}
+
+.slide-contador {
+    text-align: center;
+    padding: 15px;
+    background: var(--cor1);
+    color: var(--cor7);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.dots-container {
+    text-align: center;
+    padding: 20px;
+    background: white;
+}
+
+.dot {
+    height: 14px;
+    width: 14px;
+    margin: 0 6px;
+    background-color: var(--cor2);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.dot:hover {
+    background-color: var(--cor4);
+}
+
+.dot.active {
+    background-color: var(--cor5);
+    transform: scale(1.2);
+}
+
+.controles {
+    text-align: center;
+    padding: 20px;
+    background: var(--cor1);
+}
+
+.btn-controle {
+    padding: 12px 25px;
+    margin: 0 8px;
+    border: none;
+    background: var(--cor5);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-controle:hover {
+    background: var(--cor7);
+}
+
+@media (max-width: 600px) {
+    .slide img {
+        height: 300px;
+    }
+    
+    .slideshow-titulo {
+        font-size: 1.3em;
+    }
+    
+    .prev, .next {
+        padding: 10px 15px;
+        font-size: 18px;
+    }
 }
