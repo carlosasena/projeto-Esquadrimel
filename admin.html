@@ -3,29 +3,580 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Área administrativa da Esquadrimel - Gerenciamento interno do site.">
+    <meta name="robots" content="noindex, nofollow">
     <link rel="shortcut icon" href="image/favicon_io/android-chrome-512x512.png" type="image/x-icon">
-    <title>Esquadrimel - Administração</title>
-    <link rel="stylesheet" href="estilo.css">
+    <title>Administração - Esquadrimel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para a área administrativa */
+        .admin-only {
+            display: none;
+        }
+        
+        .admin-logged-in .admin-only {
+            display: block;
+        }
+        
+        .admin-logged-in .login-container {
+            display: none;
+        }
+        
+        .logout-container {
+            display: none;
+        }
+        
+        .admin-logged-in .logout-container {
+            display: block;
+        }
+    </style>
 </head>
-<body>
-    
-    <h1 class="logo1">Esquadrimel</h1>
-    <h2 class="logo2">ACM - VIDRO - ALUMÍNIO | Qualidade e Tradição</h2>
-    <nav >
-        <a href="index.html">Home</a>
-        <a href="galeria.html">Galeria de Fotos</a>
-        <a href="empresa.html">Quem Somos</a>
-        <a href="contato.html">Entre em Contato</a>
-        <a href="admin.html">Administração</a>
+<body class="admin-page">
+
+    <header>
+        <div class="container">
+            <h1>Esquadrimel</h1>
+            <p class="slogan">ACM - VIDRO - ALUMÍNIO</p>
+        </div>
+    </header>
+
+    <nav class="container">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="galeria.html" class="nav-link">Galeria</a>
+        <a href="empresa.html" class="nav-link">Quem Somos</a>
+        <a href="contato.html" class="nav-link">Contato</a>
+        <a href="admin.html" class="nav-link active admin-link">Administração</a>
     </nav>
 
+    <main class="container">
+        <div class="login-container" id="loginContainer">
+            <div class="login-box">
+                <div class="login-header">
+                    <i class="fas fa-lock"></i>
+                    <h2>Área Administrativa</h2>
+                    <p>Acesso restrito a usuários autorizados</p>
+                </div>
+                
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="username">
+                            <i class="fas fa-user"></i> Usuário
+                        </label>
+                        <input type="text" id="username" name="username" required placeholder="Digite seu usuário">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">
+                            <i class="fas fa-key"></i> Senha
+                        </label>
+                        <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+                        <div class="password-toggle">
+                            <button type="button" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember" name="remember">
+                            <span>Lembrar-me</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">
+                        <i class="fas fa-sign-in-alt"></i> Entrar
+                    </button>
+                    
+                    <div class="login-error" id="loginError"></div>
+                </form>
+                
+                <div class="login-info">
+                    <p><i class="fas fa-info-circle"></i> Esta área é exclusiva para administradores do site.</p>
+                    <p><i class="fas fa-shield-alt"></i> Todos os acessos são registrados e monitorados.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="admin-only" id="adminContent">
+            <div class="admin-header">
+                <div class="admin-welcome">
+                    <h2>Painel Administrativo</h2>
+                    <p>Bem-vindo, <span id="adminName">Administrador</span></p>
+                </div>
+                
+                <div class="logout-container">
+                    <button class="btn-logout" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </button>
+                </div>
+            </div>
+            
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Imagens na Galeria</h3>
+                        <p class="stat-number" id="totalImages">0</p>
+                        <p class="stat-change">+0 este mês</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Mensagens Recebidas</h3>
+                        <p class="stat-number" id="totalMessages">0</p>
+                        <p class="stat-change">+0 este mês</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Último Acesso</h3>
+                        <p class="stat-number" id="lastAccess">--/--/----</p>
+                        <p class="stat-change" id="lastAccessTime">--:--</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Status do Sistema</h3>
+                        <p class="stat-number status-online">Online</p>
+                        <p class="stat-change">Todos os sistemas operacionais</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="galeria">
+                        <i class="fas fa-images"></i> Gerenciar Galeria
+                    </button>
+                    <button class="tab-btn" data-tab="mensagens">
+                        <i class="fas fa-envelope"></i> Mensagens
+                    </button>
+                    <button class="tab-btn" data-tab="conteudo">
+                        <i class="fas fa-edit"></i> Conteúdo
+                    </button>
+                    <button class="tab-btn" data-tab="configuracoes">
+                        <i class="fas fa-cog"></i> Configurações
+                    </button>
+                </div>
+                
+                <div class="tabs-content">
+                    <!-- Tab Galeria -->
+                    <div class="tab-pane active" id="tab-galeria">
+                        <div class="tab-header">
+                            <h3><i class="fas fa-images"></i> Gerenciar Galeria de Fotos</h3>
+                            <button class="btn-add" id="addImageBtn">
+                                <i class="fas fa-plus"></i> Adicionar Imagem
+                            </button>
+                        </div>
+                        
+                        <div class="gallery-manager">
+                            <div class="gallery-actions">
+                                <div class="search-box">
+                                    <input type="text" placeholder="Buscar imagens..." id="searchImages">
+                                    <button class="btn-search">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="filter-options">
+                                    <select id="filterCategory">
+                                        <option value="all">Todas as categorias</option>
+                                        <option value="portoes">Portões</option>
+                                        <option value="janelas">Janelas</option>
+                                        <option value="grades">Grades</option>
+                                        <option value="box">Box Banheiro</option>
+                                        <option value="estruturas">Estruturas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="images-grid" id="imagesGrid">
+                                <!-- As imagens serão carregadas aqui via JavaScript -->
+                                <div class="image-placeholder">
+                                    <i class="fas fa-image"></i>
+                                    <p>Carregando galeria...</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pagination">
+                                <button class="btn-prev" disabled>
+                                    <i class="fas fa-chevron-left"></i> Anterior
+                                </button>
+                                <span class="page-info">Página <span id="currentPage">1</span> de <span id="totalPages">1</span></span>
+                                <button class="btn-next">
+                                    Próxima <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Mensagens -->
+                    <div class="tab-pane" id="tab-mensagens">
+                        <div class="tab-header">
+                            <h3><i class="fas fa-envelope"></i> Mensagens Recebidas</h3>
+                            <div class="message-filters">
+                                <button class="filter-btn active" data-filter="all">Todas</button>
+                                <button class="filter-btn" data-filter="unread">Não lidas</button>
+                                <button class="filter-btn" data-filter="read">Lidas</button>
+                            </div>
+                        </div>
+                        
+                        <div class="messages-list" id="messagesList">
+                            <div class="message-item unread">
+                                <div class="message-header">
+                                    <div class="message-sender">
+                                        <strong>João Silva</strong>
+                                        <span class="message-date">15/03/2025 14:30</span>
+                                    </div>
+                                    <div class="message-actions">
+                                        <button class="btn-action" title="Marcar como lida">
+                                            <i class="fas fa-envelope-open"></i>
+                                        </button>
+                                        <button class="btn-action" title="Excluir">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="message-subject">
+                                    <strong>Orçamento para portão residencial</strong>
+                                </div>
+                                <div class="message-preview">
+                                    Gostaria de solicitar um orçamento para um portão em alumínio...
+                                </div>
+                            </div>
+                            
+                            <div class="message-item">
+                                <div class="message-header">
+                                    <div class="message-sender">
+                                        <strong>Maria Santos</strong>
+                                        <span class="message-date">14/03/2025 10:15</span>
+                                    </div>
+                                    <div class="message-actions">
+                                        <button class="btn-action" title="Marcar como não lida">
+                                            <i class="fas fa-envelope"></i>
+                                        </button>
+                                        <button class="btn-action" title="Excluir">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="message-subject">
+                                    <strong>Dúvida sobre manutenção</strong>
+                                </div>
+                                <div class="message-preview">
+                                    Preciso de manutenção nas janelas de alumínio da minha casa...
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="no-messages" id="noMessages">
+                            <i class="fas fa-inbox"></i>
+                            <p>Nenhuma mensagem encontrada</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Conteúdo -->
+                    <div class="tab-pane" id="tab-conteudo">
+                        <div class="tab-header">
+                            <h3><i class="fas fa-edit"></i> Gerenciar Conteúdo do Site</h3>
+                        </div>
+                        
+                        <div class="content-sections">
+                            <div class="content-section">
+                                <h4><i class="fas fa-home"></i> Página Inicial</h4>
+                                <button class="btn-edit" data-section="home">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                            </div>
+                            
+                            <div class="content-section">
+                                <h4><i class="fas fa-building"></i> Quem Somos</h4>
+                                <button class="btn-edit" data-section="about">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                            </div>
+                            
+                            <div class="content-section">
+                                <h4><i class="fas fa-id-card"></i> Informações de Contato</h4>
+                                <button class="btn-edit" data-section="contact">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                            </div>
+                            
+                            <div class="content-section">
+                                <h4><i class="fas fa-sliders-h"></i> SEO e Meta Tags</h4>
+                                <button class="btn-edit" data-section="seo">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="content-editor" id="contentEditor">
+                            <div class="editor-placeholder">
+                                <i class="fas fa-mouse-pointer"></i>
+                                <p>Selecione uma seção para editar</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Configurações -->
+                    <div class="tab-pane" id="tab-configuracoes">
+                        <div class="tab-header">
+                            <h3><i class="fas fa-cog"></i> Configurações do Sistema</h3>
+                        </div>
+                        
+                        <div class="settings-grid">
+                            <div class="setting-card">
+                                <div class="setting-icon">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <h4>Segurança</h4>
+                                <p>Configurações de segurança e acesso</p>
+                                <button class="btn-setting" data-setting="security">
+                                    <i class="fas fa-wrench"></i> Configurar
+                                </button>
+                            </div>
+                            
+                            <div class="setting-card">
+                                <div class="setting-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <h4>Backup</h4>
+                                <p>Backup e restauração de dados</p>
+                                <button class="btn-setting" data-setting="backup">
+                                    <i class="fas fa-wrench"></i> Configurar
+                                </button>
+                            </div>
+                            
+                            <div class="setting-card">
+                                <div class="setting-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h4>Estatísticas</h4>
+                                <p>Análise de tráfego e métricas</p>
+                                <button class="btn-setting" data-setting="stats">
+                                    <i class="fas fa-wrench"></i> Configurar
+                                </button>
+                            </div>
+                            
+                            <div class="setting-card">
+                                <div class="setting-icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <h4>Notificações</h4>
+                                <p>Configurar alertas e notificações</p>
+                                <button class="btn-setting" data-setting="notifications">
+                                    <i class="fas fa-wrench"></i> Configurar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="system-info">
+                            <h4>Informações do Sistema</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">Versão do Sistema:</span>
+                                    <span class="info-value">2.1.0</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Última Atualização:</span>
+                                    <span class="info-value">15/03/2025</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Espaço em Disco:</span>
+                                    <span class="info-value">1.2 GB / 10 GB</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Uso de Memória:</span>
+                                    <span class="info-value">45%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-activity">
+                <h3><i class="fas fa-history"></i> Atividade Recente</h3>
+                <div class="activity-list" id="activityList">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p>Nova imagem adicionada à galeria</p>
+                            <span class="activity-time">Hoje, 10:30</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p>Mensagem de contato respondida</p>
+                            <span class="activity-time">Ontem, 16:45</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p>Login realizado com sucesso</p>
+                            <span class="activity-time">Ontem, 09:15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal para adicionar imagem -->
+        <div class="modal" id="imageModal">
+            <div class="modal-conteudo">
+                <button class="fechar-modal">&times;</button>
+                <h3>Adicionar Nova Imagem</h3>
+                
+                <form id="imageForm" class="image-form">
+                    <div class="form-group">
+                        <label for="imageTitle">Título da Imagem *</label>
+                        <input type="text" id="imageTitle" name="imageTitle" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="imageDescription">Descrição</label>
+                        <textarea id="imageDescription" name="imageDescription" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="imageCategory">Categoria *</label>
+                        <select id="imageCategory" name="imageCategory" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="portoes">Portões</option>
+                            <option value="janelas">Janelas</option>
+                            <option value="grades">Grades</option>
+                            <option value="box">Box Banheiro</option>
+                            <option value="estruturas">Estruturas</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="imageFile">Upload da Imagem *</label>
+                        <div class="file-upload">
+                            <input type="file" id="imageFile" name="imageFile" accept="image/*" required>
+                            <label for="imageFile" class="btn-upload">
+                                <i class="fas fa-cloud-upload-alt"></i> Selecionar Arquivo
+                            </label>
+                            <span class="file-name" id="fileName">Nenhum arquivo selecionado</span>
+                        </div>
+                        <div class="file-preview" id="filePreview"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="imageTags">Tags (separadas por vírgula)</label>
+                        <input type="text" id="imageTags" name="imageTags" placeholder="ex: portão, alumínio, residencial">
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-save"></i> Salvar Imagem
+                        </button>
+                        <button type="button" class="btn-cancel fechar-modal">
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Modal de confirmação -->
+        <div class="modal" id="confirmModal">
+            <div class="modal-conteudo">
+                <h3 id="confirmTitle">Confirmar Ação</h3>
+                <p id="confirmMessage">Tem certeza que deseja realizar esta ação?</p>
+                <div class="modal-actions">
+                    <button class="btn-confirm" id="confirmYes">Sim</button>
+                    <button class="btn-cancel" id="confirmNo">Não</button>
+                </div>
+            </div>
+        </div>
+    </main>
 
-<p>Área exclusiva para administração interna da **Esquadrimel**.</p>
+    <footer>
+        <div class="container footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Esquadrimel</h3>
+                <p>Referência em serralheria especializada em alumínio em Meleiro/SC.</p>
+                <div class="footer-destaque">ACM - VIDRO - ALUMÍNIO</div>
+                <p>Com mais de 20 anos de experiência, oferecemos qualidade, tradição e projetos personalizados.</p>
+            </div>
 
-<p>🔒 Acesso restrito a usuários autorizados</p>
-<p>📊 Gerenciamento de conteúdo, galeria e informações institucionais</p>
-<p>🛠 Controle administrativo do site</p>
+            <div class="footer-coluna">
+                <h3>Nossos Serviços</h3>
+                <ul class="footer-lista">
+                    <li>Portões em alumínio</li>
+                    <li>Janelas e esquadrias</li>
+                    <li>Box para banheiro</li>
+                    <li>Grades de proteção</li>
+                    <li>Estruturas metálicas</li>
+                    <li>Manutenção especializada</li>
+                </ul>
+            </div>
 
----
+            <div class="footer-coluna">
+                <h3>Entre em Contato</h3>
+                
+                <div class="footer-info-item">
+                    <span class="footer-icone">📍</span>
+                    <span class="footer-texto">Meleiro - Santa Catarina, Brasil</span>
+                </div>
+
+                <div class="footer-info-item">
+                    <span class="footer-icone">📞</span>
+                    <span class="footer-texto">(48) 0000-0000<br>(48) 00000-0000</span>
+                </div>
+
+                <div class="footer-info-item">
+                    <span class="footer-icone">📧</span>
+                    <span class="footer-texto">contato@esquadrimel.com.br</span>
+                </div>
+
+                <div class="footer-info-item">
+                    <span class="footer-icone">🕐</span>
+                    <span class="footer-texto">Segunda a Sexta<br>08:00 às 18:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-direitos">
+            <div class="container">
+                <p><strong>&copy; 2025 Esquadrimel</strong> - Todos os direitos reservados</p>
+                <p>Serralheria em Alumínio | Meleiro/SC | CNPJ: 00.000.000/0001-00</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
 </body>
 </html>

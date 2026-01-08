@@ -3,38 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galeria da Esquadrimel - Veja nossos trabalhos em serralheria de alumínio em Meleiro/SC. Portões, janelas, grades e box para banheiro.">
+    <meta name="keywords" content="galeria serralheria, trabalhos em alumínio, fotos portões, esquadrias, grades proteção, box banheiro, Meleiro">
+    <meta name="author" content="Esquadrimel">
     <link rel="shortcut icon" href="image/favicon_io/android-chrome-512x512.png" type="image/x-icon">
-    <title>Esquadrimel - Galeria</title>
-    <link rel="stylesheet" href="estilo.css">
+    <title>Galeria - Esquadrimel Serralheria em Alumínio Meleiro/SC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
-    <h1 class="logo1">Esquadrimel</h1>
-    <h2 class="logo2">ACM - VIDRO - ALUMÍNIO | Qualidade e Tradição</h2>
-    <nav >
-        <a href="index.html">Home</a>
-        <a href="galeria.html">Galeria de Fotos</a>
-        <a href="empresa.html">Quem Somos</a>
-        <a href="contato.html">Entre em Contato</a>
-        <a href="admin.html">Administração</a>
+
+    <header>
+        <div class="container">
+            <h1>Esquadrimel</h1>
+            <p class="slogan">ACM - VIDRO - ALUMÍNIO</p>
+        </div>
+    </header>
+
+    <nav class="container">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="galeria.html" class="nav-link active">Galeria</a>
+        <a href="empresa.html" class="nav-link">Quem Somos</a>
+        <a href="contato.html" class="nav-link">Contato</a>
+        <a href="admin.html" class="nav-link admin-link">Administração</a>
     </nav>
 
+    <main class="container">
+        <section class="galeria-intro">
+            <h2>Nossos Trabalhos em Alumínio</h2>
+            <p class="lead">
+                Confira nossa galeria com <strong>trabalhos em serralheria de alumínio realizados em Meleiro SC e região</strong>, executados ao longo de <strong>mais de 20 anos de experiência</strong>.
+            </p>
+            
+            <div class="galeria-destaques">
+                <div class="destaque-categoria">
+                    <i class="fas fa-gateway"></i>
+                    <h3>Portões de Alumínio</h3>
+                    <p>Sob medida para residências, comércios e indústrias</p>
+                </div>
+                <div class="destaque-categoria">
+                    <i class="fas fa-window-maximize"></i>
+                    <h3>Janelas e Esquadrias</h3>
+                    <p>Modernas, duráveis e com ótimo isolamento térmico</p>
+                </div>
+                <div class="destaque-categoria">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Grades de Proteção</h3>
+                    <p>Segurança com elegância para sacadas e janelas</p>
+                </div>
+                <div class="destaque-categoria">
+                    <i class="fas fa-shower"></i>
+                    <h3>Box para Banheiro</h3>
+                    <p>Práticos, modernos e resistentes à umidade</p>
+                </div>
+            </div>
+        </section>
 
-<p>Confira alguns dos nossos **trabalhos em serralheria de alumínio realizados em Meleiro SC e região**, executados ao longo de **mais de 20 anos de experiência**.</p>
+        <section class="galeria-filtros">
+            <h3>Filtrar por Categoria:</h3>
+            <div class="filtros-container">
+                <button class="filtro-btn active" data-categoria="todos">Todos os Trabalhos</button>
+                <button class="filtro-btn" data-categoria="portoes">Portões</button>
+                <button class="filtro-btn" data-categoria="janelas">Janelas</button>
+                <button class="filtro-btn" data-categoria="grades">Grades</button>
+                <button class="filtro-btn" data-categoria="box">Box Banheiro</button>
+                <button class="filtro-btn" data-categoria="estruturas">Estruturas</button>
+            </div>
+        </section>
 
-<h2>Nossa galeria apresenta:</h2>
+        <section class="galeria-fotos">
+            <div class="galeria-grid">
+                <!-- Portões -->
+                <div class="galeria-item" data-categoria="portoes">
+                    <div class="galeria-img-container">
+                        <img src="image/portao-aluminio-meleiro-01.jpg" alt="Portão em alumínio residencial em Meleiro SC" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Portão Residencial</h4>
+                                <p>Portão em alumínio sob medida para residência em Meleiro</p>
+                                <span class="galeria-tag">Portões</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="galeria-item" data-categoria="portoes">
+                    <div class="galeria-img-container">
+                        <img src="image/portao-aluminio-comercial-02.jpg" alt="Portão comercial em alumínio Meleiro Santa Catarina" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Portão Comercial</h4>
+                                <p>Portão para estabelecimento comercial com acabamento premium</p>
+                                <span class="galeria-tag">Portões</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Janelas -->
+                <div class="galeria-item" data-categoria="janelas">
+                    <div class="galeria-img-container">
+                        <img src="image/janela-aluminio-maximo-01.jpg" alt="Janelas de alumínio com vidro temperado Meleiro SC" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Janelas em Alumínio</h4>
+                                <p>Esquadrias modernas com vidro temperado para máxima luminosidade</p>
+                                <span class="galeria-tag">Janelas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="galeria-item" data-categoria="janelas">
+                    <div class="galeria-img-container">
+                        <img src="image/esquadrias-aluminio-residencial-02.jpg" alt="Esquadrias de alumínio para residência em Meleiro" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Esquadrias Residenciais</h4>
+                                <p>Conjunto completo de esquadrias para residência em Meleiro</p>
+                                <span class="galeria-tag">Janelas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Grades -->
+                <div class="galeria-item" data-categoria="grades">
+                    <div class="galeria-img-container">
+                        <img src="image/grade-protecao-sacada-01.jpg" alt="Grade de proteção para sacada em alumínio Meleiro" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Grade para Sacada</h4>
+                                <p>Grade de proteção em alumínio com design moderno e seguro</p>
+                                <span class="galeria-tag">Grades</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="galeria-item" data-categoria="grades">
+                    <div class="galeria-img-container">
+                        <img src="image/grade-janela-seguranca-02.jpg" alt="Grade de segurança para janelas em alumínio" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Grade para Janelas</h4>
+                                <p>Sistema de segurança discreto e eficiente para janelas</p>
+                                <span class="galeria-tag">Grades</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Box Banheiro -->
+                <div class="galeria-item" data-categoria="box">
+                    <div class="galeria-img-container">
+                        <img src="image/box-banheiro-aluminio-01.jpg" alt="Box para banheiro em alumínio com vidro temperado" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Box para Banheiro</h4>
+                                <p>Box em alumínio com vidro temperado, resistente à umidade</p>
+                                <span class="galeria-tag">Box Banheiro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="galeria-item" data-categoria="box">
+                    <div class="galeria-img-container">
+                        <img src="image/box-banheiro-moderno-02.jpg" alt="Box de banheiro moderno em alumínio Meleiro SC" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Box Moderno</h4>
+                                <p>Design contemporâneo com acabamento premium</p>
+                                <span class="galeria-tag">Box Banheiro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Estruturas -->
+                <div class="galeria-item" data-categoria="estruturas">
+                    <div class="galeria-img-container">
+                        <img src="image/estrutura-metalica-aluminio-01.jpg" alt="Estrutura metálica em alumínio para cobertura" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Estrutura Metálica</h4>
+                                <p>Estrutura em alumínio para cobertura de área externa</p>
+                                <span class="galeria-tag">Estruturas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="galeria-item" data-categoria="estruturas">
+                    <div class="galeria-img-container">
+                        <img src="image/cobertura-aluminio-garagem-02.jpg" alt="Cobertura em alumínio para garagem Meleiro" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Cobertura para Garagem</h4>
+                                <p>Estrutura robusta em alumínio para proteção de veículos</p>
+                                <span class="galeria-tag">Estruturas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mais exemplos (substitua pelas suas imagens reais) -->
+                <div class="galeria-item" data-categoria="portoes">
+                    <div class="galeria-img-container">
+                        <img src="image/image01.jpg" alt="Portão residencial em alumínio com detalhes personalizados" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Portão com Detalhes</h4>
+                                <p>Portão personalizado com detalhes em alumínio maciço</p>
+                                <span class="galeria-tag">Portões</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="galeria-item" data-categoria="janelas">
+                    <div class="galeria-img-container">
+                        <img src="image/image03.jpg" alt="Janelas de correr em alumínio para escritório" loading="lazy">
+                        <div class="galeria-overlay">
+                            <div class="galeria-info">
+                                <h4>Janelas de Correr</h4>
+                                <p>Sistema de janelas de correr em alumínio para escritório</p>
+                                <span class="galeria-tag">Janelas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="galeria-info-seo">
+                <div class="info-box">
+                    <i class="fas fa-info-circle"></i>
+                    <h4>Dica SEO para Nomes de Imagens</h4>
+                    <p>Para melhorar o SEO, utilize nomes descritivos como:</p>
+                    <ul>
+                        <li><code>portao-aluminio-residencial-meleiro-sc.jpg</code></li>
+                        <li><code>janela-aluminio-vidro-temperado.jpg</code></li>
+                        <li><code>grade-protecao-sacada-aluminio.jpg</code></li>
+                        <li><code>box-banheiro-aluminio-moderno.jpg</code></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="galeria-cta">
+            <div class="cta-content">
+                <h3>Gostou dos nossos trabalhos?</h3>
+                <p>Entre em contato para solicitar um orçamento personalizado para seu projeto em alumínio.</p>
+                <a href="contato.html" class="btn-primary">Solicitar Orçamento</a>
+            </div>
+        </section>
+    </main>
 
-<ul>
-    <li>* Portões de alumínio sob medida</li>
-    <li>* Janelas e esquadrias de alumínio</li>
-    <li>* Grades de proteção</li>
-    <li>* Box para banheiro em alumínio</li>
-</ul>
+    <footer>
+        <div class="container footer-conteudo">
+            <div class="footer-coluna">
+                <h3>Esquadrimel</h3>
+                <p>Referência em serralheria especializada em alumínio em Meleiro/SC.</p>
+                <div class="footer-destaque">ACM - VIDRO - ALUMÍNIO</div>
+                <p>Com mais de 20 anos de experiência, oferecemos qualidade, tradição e projetos personalizados.</p>
+            </div>
 
-<h2>👉 *Qualidade, durabilidade e acabamento profissional em cada projeto.*</h2>
+            <div class="footer-coluna">
+                <h3>Nossos Serviços</h3>
+                <ul class="footer-lista">
+                    <li>Portões em alumínio</li>
+                    <li>Janelas e esquadrias</li>
+                    <li>Box para banheiro</li>
+                    <li>Grades de proteção</li>
+                    <li>Estruturas metálicas</li>
+                    <li>Manutenção especializada</li>
+                </ul>
+            </div>
 
-*(Dica SEO técnica: use nomes de imagens como `portao-aluminio-meleiro-sc.jpg`)*
+            <div class="footer-coluna">
+                <h3>Entre em Contato</h3>
+                
+                <div class="footer-info-item">
+                    <span class="footer-icone">📍</span>
+                    <span class="footer-texto">Meleiro - Santa Catarina, Brasil</span>
+                </div>
 
----
+                <div class="footer-info-item">
+                    <span class="footer-icone">📞</span>
+                    <span class="footer-texto">(48) 0000-0000<br>(48) 00000-0000</span>
+                </div>
+
+                <div class="footer-info-item">
+                    <span class="footer-icone">📧</span>
+                    <span class="footer-texto">contato@esquadrimel.com.br</span>
+                </div>
+
+                <div class="footer-info-item">
+                    <span class="footer-icone">🕐</span>
+                    <span class="footer-texto">Segunda a Sexta<br>08:00 às 18:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-direitos">
+            <div class="container">
+                <p><strong>&copy; 2025 Esquadrimel</strong> - Todos os direitos reservados</p>
+                <p>Serralheria em Alumínio | Meleiro/SC | CNPJ: 00.000.000/0001-00</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="galeria.js"></script>
 </body>
 </html>
