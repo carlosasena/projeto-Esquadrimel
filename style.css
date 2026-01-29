@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+/* Configurações Globais */
+* {
+    padding: 0;
+    margin: 0; 
+}
+
+@font-face {
+    font-family: 'NeueAachen';
+    src: url('./fonts/NeueAachen/NeueAachenProBold.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+:root {
+    --cor0: #F8F1F1;
+    --cor1: #E5989B;
+    --cor2: #990033;
+    --cor3: #660000; /*bordô*/
+    --cor4: #2D0505;
+}
+
+/* BODY */
+body {
+    background: var(--cor0);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cor3);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'NeueAachen';
+    padding: 20px;
+    margin: 10px;
+}
+
+/* HEADER - NAV */
+
+
+/* MAIN */
+
+
+/* FOOTER */
+
