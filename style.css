@@ -746,10 +746,6 @@ ul {
     margin-bottom: 40px;
 }
 
-.footer-info {
-    /* Bloco de informações */
-}
-
 .footer-title {
     font-family: 'NeueAachen';
     font-size: 1.5rem;
@@ -763,10 +759,6 @@ ul {
     font-size: 0.95rem;
     line-height: 1.6;
     color: rgba(248, 241, 241, 0.85);
-}
-
-.footer-nav {
-    /* Navegação do footer */
 }
 
 .footer-nav-title {
@@ -792,10 +784,6 @@ ul {
 .footer-link:hover {
     color: var(--cor1);
     padding-left: 8px;
-}
-
-.footer-contact {
-    /* Bloco de contato */
 }
 
 .footer-contact-title {
@@ -825,7 +813,8 @@ ul {
     color: rgba(248, 241, 241, 0.6);
 }
 
-/* REPO@media (max-width: 768px) {
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
     .header .container {
         flex-direction: column;
         gap: 15px;
@@ -915,11 +904,19 @@ ul {
     }
 }
 
-.hero,
-.about,
-.excellence,
-.services,
-.features,
-.cta {
-    animation: fadeIn 0.8s ease-out;
+/* Classe aplicada pelo JS quando a seção entra na tela */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header com sombra ao rolar - classe aplicada pelo JS */
+.header.scrolled {
+    box-shadow: 0 4px 20px rgba(102, 0, 0, 0.25);
 }
