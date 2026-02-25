@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-/* Reset e Configurações Globais */
+/* ========================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ======================================== */
 * {
     padding: 0;
     margin: 0;
@@ -21,11 +23,13 @@
     --cor0: #F8F1F1;
     --cor1: #E5989B;
     --cor2: #990033;
-    --cor3: #660000; /*bordô*/
+    --cor3: #660000; /* bordô */
     --cor4: #2D0505;
 }
 
-/* BODY */
+/* ========================================
+   BODY
+   ======================================== */
 body {
     background: var(--cor0);
     font-family: 'Montserrat', sans-serif;
@@ -33,7 +37,9 @@ body {
     line-height: 1.6;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'NeueAachen';
     padding: 20px;
     margin: 10px;
@@ -54,14 +60,18 @@ ul {
     list-style: none;
 }
 
-/* Container Global */
+/* ========================================
+   CONTAINER GLOBAL
+   ======================================== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* HEADER */
+/* ========================================
+   HEADER
+   ======================================== */
 .header {
     position: fixed;
     top: 0;
@@ -93,7 +103,9 @@ ul {
     transform: scale(1.05);
 }
 
-/* NAV */
+/* ========================================
+   NAV
+   ======================================== */
 .nav-list {
     display: flex;
     gap: 30px;
@@ -143,12 +155,16 @@ ul {
     transform: translateX(-50%) scaleX(1);
 }
 
-/* MAIN */
+/* ========================================
+   MAIN
+   ======================================== */
 .main {
     margin-top: 90px;
 }
 
-/* section hero */
+/* ========================================
+   HERO
+   ======================================== */
 .hero {
     background: linear-gradient(135deg, var(--cor1) 0%, var(--cor3) 100%);
     padding: 80px 0;
@@ -185,7 +201,9 @@ ul {
     padding: 20px;
 }
 
-/* section about */
+/* ========================================
+   ABOUT
+   ======================================== */
 .about {
     padding: 80px 0;
     background: var(--cor0);
@@ -211,7 +229,6 @@ ul {
     text-align: center;
 }
 
-/* Estilização do Botão de Chamada para Ação */
 .about-cta {
     text-align: center;
     margin-top: 30px;
@@ -220,18 +237,14 @@ ul {
 .about-cta a {
     display: inline-block;
     padding: 15px 35px;
-    background-color: var(--cor3); /* Bordô Destaque */
-    color: var(--cor0);            /* Texto Claro */
+    background-color: var(--cor3);
+    color: var(--cor0);
     text-decoration: none;
     font-family: 'NeueAachen', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    
-    /* A mágica dos cantos arredondados */
-    border-radius: 50px;           /* Bordas totalmente arredondadas (estilo pílula) */
-    
-    /* Suavidade na interação */
+    border-radius: 50px;
     transition: all 0.3s ease;
     border: 2px solid var(--cor2);
 }
@@ -239,11 +252,13 @@ ul {
 .about-cta a:hover {
     background-color: transparent;
     color: var(--cor2);
-    transform: translateY(-3px);   /* Leve elevação ao passar o mouse */
-    box-shadow: 0 10px 20px rgba(45, 5, 5, 0.2); /* Sombra elegante */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(45, 5, 5, 0.2);
 }
 
-/* secttion excellence */
+/* ========================================
+   EXCELLENCE
+   ======================================== */
 .excellence {
     padding: 80px 0;
     background: linear-gradient(to bottom, var(--cor0) 0%, rgba(229, 152, 155, 0.1) 100%);
@@ -268,14 +283,16 @@ ul {
     text-align: center;
 }
 
-/*section services */
+/* ========================================
+   SERVICES (index.html)
+   ======================================== */
 .services {
     padding: 80px 0;
     background: var(--cor0);
 }
 
 .services-title {
-     font-family: 'NeueAachen';
+    font-family: 'NeueAachen';
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     color: var(--cor3);
     text-align: center;
@@ -283,13 +300,8 @@ ul {
     margin: 10px auto 30px;
 }
 
-.service-card-title {
-    text-align: center;
-}
-
 .services .container {
     display: grid;
-    /* Isso cria as 3 colunas automaticamente se houver espaço (min 300px cada) */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     padding: 0 20px;
@@ -305,7 +317,7 @@ ul {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 2px solid var(--cor1);
     display: flex;
-    flex-direction: column; /* Garante que o conteúdo interno alinhe verticalmente */
+    flex-direction: column;
 }
 
 .service-card:hover {
@@ -318,6 +330,7 @@ ul {
     font-family: 'NeueAachen';
     font-size: 1.5rem;
     color: var(--cor2);
+    text-align: center;
     padding: 10px 0;
     margin: 10px 0 15px;
 }
@@ -338,18 +351,14 @@ ul {
 .services-cta a {
     display: inline-block;
     padding: 15px 35px;
-    background-color: var(--cor3); /* Bordô Destaque */
-    color: var(--cor0);            /* Texto Claro */
+    background-color: var(--cor3);
+    color: var(--cor0);
     text-decoration: none;
     font-family: 'NeueAachen', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    
-    /* A mágica dos cantos arredondados */
-    border-radius: 50px;           /* Bordas totalmente arredondadas (estilo pílula) */
-    
-    /* Suavidade na interação */
+    border-radius: 50px;
     transition: all 0.3s ease;
     border: 2px solid var(--cor2);
 }
@@ -357,11 +366,13 @@ ul {
 .services-cta a:hover {
     background-color: transparent;
     color: var(--cor2);
-    transform: translateY(-3px);   /* Leve elevação ao passar o mouse */
-    box-shadow: 0 10px 20px rgba(45, 5, 5, 0.2); /* Sombra elegante */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(45, 5, 5, 0.2);
 }
 
-/* section features */
+/* ========================================
+   FEATURES
+   ======================================== */
 .features {
     padding: 80px 0;
     background: linear-gradient(to bottom, rgba(229, 152, 155, 0.1) 0%, var(--cor0) 100%);
@@ -405,20 +416,22 @@ ul {
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 1.5rem;
     color: var(--cor2);
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: bold;
 }
 
 .features-item:hover {
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(153, 0, 51, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(102, 0, 0, 0.12);
 }
 
-/* section CTA */
+/* ========================================
+   CTA
+   ======================================== */
 .cta {
     padding: 80px 0;
-    background: var(--cor3);
+    background: linear-gradient(135deg, var(--cor3) 0%, var(--cor4) 100%);
     text-align: center;
 }
 
@@ -439,17 +452,17 @@ ul {
     font-family: 'Montserrat';
     font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--cor0);
+    color: rgba(248, 241, 241, 0.85);
     margin-bottom: 30px;
-    opacity: 0.95;
 }
 
 .cta-button {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-/* empresa.html */
-/* Seção Company History */
+/* ========================================
+   EMPRESA - COMPANY HISTORY
+   ======================================== */
 .company-history {
     padding: 80px 0;
     background: var(--cor0);
@@ -459,7 +472,6 @@ ul {
     font-family: 'NeueAachen';
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     color: var(--cor3);
-    text-align: center;
     padding: 20px;
     margin: 10px auto 30px;
 }
@@ -470,10 +482,12 @@ ul {
     line-height: 1.8;
     color: var(--cor3);
     max-width: 800px;
-    margin: 0 auto 25px;
+    margin: 0 auto 20px;
 }
 
-/* Seção Mission */
+/* ========================================
+   EMPRESA - MISSION
+   ======================================== */
 .mission {
     padding: 80px 0;
     background: linear-gradient(to bottom, rgba(229, 152, 155, 0.1) 0%, var(--cor0) 100%);
@@ -487,11 +501,15 @@ ul {
 
 .mission-card {
     background: #ffffff;
-    padding: 30px;
+    padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(102, 0, 0, 0.1);
-    text-align: center;
     border-top: 4px solid var(--cor2);
+    transition: transform 0.3s ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
 }
 
 .mission-card--full {
@@ -499,7 +517,6 @@ ul {
 }
 
 .mission-card-icon {
-    /* Espaço para ícone */
     margin-bottom: 15px;
 }
 
@@ -535,8 +552,9 @@ ul {
     border-left: 3px solid var(--cor2);
 }
 
-/* servico.html */
-/* Seção Services Intro */
+/* ========================================
+   SERVICO - SERVICES INTRO
+   ======================================== */
 .services-intro {
     padding: 30px 0;
     background: var(--cor0);
@@ -552,7 +570,9 @@ ul {
     text-align: center;
 }
 
-/* Seção Services Details */
+/* ========================================
+   SERVICO - SERVICES DETAILS
+   ======================================== */
 .services-details {
     padding: 80px 0;
     background: linear-gradient(to bottom, rgba(229, 152, 155, 0.1) 0%, var(--cor0) 100%);
@@ -578,7 +598,6 @@ ul {
 }
 
 .service-detail-icon {
-    /* Espaço para ícone */
     margin-bottom: 15px;
 }
 
@@ -597,8 +616,9 @@ ul {
     color: var(--cor3);
 }
 
-/* contato.html */
-/* Seção Contact Intro */
+/* ========================================
+   CONTATO - CONTACT INTRO
+   ======================================== */
 .contact-intro {
     padding: 30px 0;
     background: var(--cor0);
@@ -614,9 +634,11 @@ ul {
     text-align: center;
 }
 
-/* Seção Contact Service */
+/* ========================================
+   CONTATO - CONTACT SERVICE
+   ======================================== */
 .contact-service {
-    padding: 80px 0;
+    padding: 60px 0;
     background: linear-gradient(to bottom, rgba(229, 152, 155, 0.1) 0%, var(--cor0) 100%);
     text-align: center;
 }
@@ -638,20 +660,119 @@ ul {
     margin: 0 auto;
 }
 
-/* Seção Contact WhatsApp */
-.contact-whatsapp {
+/* ========================================
+   CONTATO - FORMULÁRIO
+   ======================================== */
+.contact-form-section {
     padding: 80px 0;
     background: var(--cor0);
+}
+
+.contact-form-title {
+    font-family: 'NeueAachen';
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--cor3);
+    text-align: center;
+    padding: 20px;
+    margin: 10px auto 40px;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 6px 30px rgba(102, 0, 0, 0.12);
+    border-top: 4px solid var(--cor2);
+}
+
+.contact-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-form-group--full {
+    grid-column: 1 / -1;
+}
+
+.contact-form-label {
+    font-family: 'NeueAachen';
+    font-size: 0.9rem;
+    color: var(--cor3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-form-required {
+    color: var(--cor2);
+    margin-left: 2px;
+}
+
+.contact-form-input,
+.contact-form-textarea {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    color: var(--cor3);
+    background: var(--cor0);
+    border: 2px solid rgba(102, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    width: 100%;
+}
+
+.contact-form-input:focus,
+.contact-form-textarea:focus {
+    border-color: var(--cor2);
+    box-shadow: 0 0 0 3px rgba(153, 0, 51, 0.1);
+}
+
+.contact-form-input::placeholder,
+.contact-form-textarea::placeholder {
+    color: rgba(102, 0, 0, 0.4);
+}
+
+.contact-form-textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.contact-form-submit {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* ========================================
+   CONTATO - WHATSAPP
+   ======================================== */
+.contact-whatsapp {
+    padding: 60px 0;
+    background: linear-gradient(to bottom, rgba(229, 152, 155, 0.08) 0%, var(--cor0) 100%);
 }
 
 .contact-whatsapp-content {
     text-align: center;
 }
 
-/* Seção Contact Info */
+.contact-whatsapp-text {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    color: var(--cor3);
+    margin-bottom: 20px;
+}
+
+/* ========================================
+   CONTATO - INFO CARD
+   ======================================== */
 .contact-info {
     padding: 80px 0;
-    background: linear-gradient(to bottom, rgba(229, 152, 155, 0.1) 0%, var(--cor0) 100%);
+    background: var(--cor0);
 }
 
 .contact-info-card {
@@ -680,8 +801,139 @@ ul {
     color: var(--cor3);
 }
 
-/* btn */
+/* ========================================
+   GALERIA - INTRO
+   ======================================== */
+.gallery-intro {
+    padding: 40px 0;
+    background: var(--cor0);
+    text-align: center;
+}
 
+.gallery-intro-text {
+    font-family: 'Montserrat';
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--cor3);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   GALERIA - FILTRO
+   ======================================== */
+.gallery-filter {
+    padding: 20px 0 40px;
+    background: var(--cor0);
+    position: sticky;
+    top: 90px;
+    z-index: 100;
+    border-bottom: 1px solid rgba(102, 0, 0, 0.1);
+}
+
+.gallery-filter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.gallery-filter-btn {
+    font-family: 'NeueAachen';
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    border: 2px solid var(--cor2);
+    background: transparent;
+    color: var(--cor2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-filter-btn:hover,
+.gallery-filter-btn--active {
+    background: var(--cor2);
+    color: var(--cor0);
+    box-shadow: 0 4px 12px rgba(153, 0, 51, 0.25);
+}
+
+/* ========================================
+   GALERIA - MAIN / CATEGORIAS
+   ======================================== */
+.gallery-main {
+    padding: 60px 0;
+    background: var(--cor0);
+}
+
+.gallery-category {
+    margin-bottom: 70px;
+}
+
+.gallery-category:last-child {
+    margin-bottom: 0;
+}
+
+.gallery-category-title {
+    font-family: 'NeueAachen';
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--cor3);
+    padding: 10px 0;
+    margin: 0 0 8px;
+}
+
+.gallery-category-desc {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    color: rgba(102, 0, 0, 0.7);
+    margin-bottom: 25px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(102, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(153, 0, 51, 0.2);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.04);
+}
+
+.gallery-caption {
+    font-family: 'Montserrat';
+    font-size: 0.9rem;
+    color: var(--cor3);
+    padding: 12px 16px;
+    background: #ffffff;
+    border-top: 2px solid var(--cor1);
+}
+
+/* ========================================
+   BTN
+   ======================================== */
 .btn {
     display: inline-block;
     padding: 15px 40px;
@@ -731,8 +983,9 @@ ul {
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
-/* FOOTER */
-
+/* ========================================
+   FOOTER
+   ======================================== */
 .footer {
     background: var(--cor4);
     color: var(--cor0);
@@ -741,32 +994,68 @@ ul {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 2fr 1fr 1.5fr;
     gap: 40px;
     margin-bottom: 40px;
+    align-items: start;
 }
 
-.footer-title {
-    font-family: 'NeueAachen';
-    font-size: 1.5rem;
-    color: var(--cor1);
-    padding: 15px 0;
-    margin: 10px 0 15px;
+/* Coluna: Logo + Redes Sociais */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-logo img {
+    height: 55px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
 }
 
 .footer-text {
     font-family: 'Montserrat';
     font-size: 0.95rem;
     line-height: 1.6;
-    color: rgba(248, 241, 241, 0.85);
+    color: rgba(248, 241, 241, 0.75);
 }
 
+.footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(248, 241, 241, 0.1);
+    color: var(--cor0);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(248, 241, 241, 0.15);
+}
+
+.footer-social-link:hover {
+    background: var(--cor1);
+    color: var(--cor4);
+    transform: translateY(-3px);
+    border-color: var(--cor1);
+}
+
+/* Coluna: Navegação */
 .footer-nav-title {
     font-family: 'NeueAachen';
     font-size: 1.1rem;
     color: var(--cor0);
-    padding: 10px 0;
-    margin: 10px 0 15px;
+    padding: 0 0 10px;
+    margin: 0 0 15px;
+    border-bottom: 2px solid var(--cor2);
+    display: inline-block;
 }
 
 .footer-nav-list {
@@ -786,34 +1075,85 @@ ul {
     padding-left: 8px;
 }
 
+/* Coluna: Contato */
 .footer-contact-title {
     font-family: 'NeueAachen';
     font-size: 1.1rem;
     color: var(--cor0);
-    padding: 10px 0;
-    margin: 10px 0 15px;
+    padding: 0 0 10px;
+    margin: 0 0 15px;
+    border-bottom: 2px solid var(--cor2);
+    display: inline-block;
 }
 
 .footer-address {
-    font-family: 'Montserrat';
     font-style: normal;
-    color: rgba(248, 241, 241, 0.85);
-    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
+.footer-address-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: 'Montserrat';
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(248, 241, 241, 0.75);
+}
+
+.footer-address-icon {
+    flex-shrink: 0;
+    font-size: 1rem;
+    margin-top: 1px;
+}
+
+/* Footer Bottom */
 .footer-bottom {
-    border-top: 1px solid rgba(248, 241, 241, 0.2);
-    padding-top: 30px;
-    text-align: center;
+    border-top: 1px solid rgba(248, 241, 241, 0.15);
+    padding-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
 .footer-copyright {
     font-family: 'Montserrat';
-    font-size: 0.9rem;
-    color: rgba(248, 241, 241, 0.6);
+    font-size: 0.85rem;
+    color: rgba(248, 241, 241, 0.5);
 }
 
-/* RESPONSIVIDADE */
+.footer-dev {
+    font-family: 'Montserrat';
+    font-size: 0.85rem;
+    color: rgba(248, 241, 241, 0.45);
+}
+
+.footer-dev-link {
+    color: var(--cor1);
+    transition: color 0.3s ease;
+}
+
+.footer-dev-link:hover {
+    color: var(--cor0);
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+@media (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;
@@ -821,39 +1161,77 @@ ul {
         padding-top: 20px;
         padding-bottom: 20px;
     }
-    
+
     .nav-list {
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .nav-link {
         font-size: 14px;
         padding: 8px 15px;
     }
-    
+
     .main {
         margin-top: 140px;
     }
-    
-    h1, h2, h3 {
+
+    h1,
+    h2,
+    h3 {
         padding: 15px;
         margin: 8px;
     }
-    
+
     .services .container,
     .features-list,
     .mission .container,
     .services-details .container {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
+    .footer-brand {
+        align-items: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-nav-title,
+    .footer-contact-title {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-address-item {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+    }
+
+    .gallery-filter {
+        top: 140px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .hero,
     .about,
     .excellence,
@@ -867,7 +1245,10 @@ ul {
     .contact-intro,
     .contact-service,
     .contact-whatsapp,
-    .contact-info {
+    .contact-info,
+    .contact-form-section,
+    .gallery-intro,
+    .gallery-main {
         padding: 50px 0;
     }
 }
@@ -876,23 +1257,34 @@ ul {
     .hero {
         padding: 40px 0;
     }
-    
+
     .btn {
         padding: 12px 30px;
         font-size: 0.9rem;
     }
-    
+
     .features-item {
         padding-left: 50px;
     }
-    
+
     .features-item::before {
         left: 15px;
         font-size: 1.5rem;
     }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-filter-btn {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
 }
 
-/* ANIMAÇÕES */
+/* ========================================
+   ANIMAÇÕES
+   ======================================== */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -904,7 +1296,6 @@ ul {
     }
 }
 
-/* Classe aplicada pelo JS quando a seção entra na tela */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -916,7 +1307,7 @@ ul {
     transform: translateY(0);
 }
 
-/* Header com sombra ao rolar - classe aplicada pelo JS */
+/* Header com sombra ao rolar */
 .header.scrolled {
     box-shadow: 0 4px 20px rgba(102, 0, 0, 0.25);
 }
